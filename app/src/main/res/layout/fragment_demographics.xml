@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".fragments.DemographicsFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="General Demographics"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/sexQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="Sex"
+            android:textSize="18sp"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ageAnswer"
+            tools:ignore="MissingConstraints" />
+
+        <RadioGroup
+            android:id="@+id/sexRadioGroup"
+            android:layout_width="371dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sexQuestion"
+            tools:ignore="MissingConstraints">
+
+            <RadioButton
+                android:id="@+id/femaleOptionForSex"
+                android:layout_width="16dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                android:gravity="center_horizontal|top"
+                android:text="Female"
+                android:textSize="12sp"
+                tools:ignore="MissingConstraints" />
+
+            <RadioButton
+                android:id="@+id/maleOptionForSex"
+                android:layout_width="28dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                android:gravity="center_horizontal|top"
+                android:text="male"
+                android:textSize="12sp"
+                tools:ignore="MissingConstraints" />
+
+            <RadioButton
+                android:id="@+id/intersexOptionForSex"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                android:gravity="center_horizontal|top"
+                android:text="Intersex"
+                android:textSize="12sp"
+                tools:ignore="MissingConstraints" />
+
+            <RadioButton
+                android:id="@+id/chooseNothingOptionForSex"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawableBottom="?android:attr/listChoiceIndicatorSingle"
+                android:gravity="center_horizontal|top"
+                android:text="Choose Not To Say"
+                android:textSize="12sp"
+                tools:ignore="MissingConstraints" />
+        </RadioGroup>
+
+        <TextView
+            android:id="@+id/ageQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Age"
+            android:textSize="18sp"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            tools:ignore="MissingConstraints" />
+
+        <EditText
+            android:id="@+id/ageAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="Write Age Here"
+            android:inputType="text"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ageQuestion"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/raceQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Race"
+            android:textSize="18sp"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/sexRadioGroup"
+            tools:ignore="MissingConstraints" />
+
+        <Spinner
+            android:id="@+id/raceAnswer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="raceAnswer"
+            android:textSize="18sp"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/raceQuestion"
+            tools:ignore="MissingConstraints" />
+
+        <Button
+            android:id="@+id/demographicsSubmitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="submit"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_chainStyle="packed"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/raceAnswer"
+            tools:ignore="MissingConstraints" />
+
+        <!--        <TextView-->
+<!--            android:id="@+id/restingBloodPressureQuestion"-->
+<!--            android:layout_width="194dp"-->
+<!--            android:layout_height="29dp"-->
+<!--            android:text="Resting Blood Pressure"-->
+<!--            android:textSize="18dp"-->
+<!--            tools:ignore="MissingConstraints"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/serumCholestoralQuestion"-->
+<!--            android:layout_width="227dp"-->
+<!--            android:layout_height="29dp"-->
+<!--            android:text="Serum Cholestoral in mg/dl"-->
+<!--            android:textSize="18dp"-->
+<!--            tools:ignore="MissingConstraints"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/restingElectrocardiographicResultsQuestion"-->
+<!--            android:layout_width="174dp"-->
+<!--            android:layout_height="67dp"-->
+<!--            android:layout_marginStart="16dp"-->
+<!--            android:layout_marginTop="320dp"-->
+<!--            android:text="Resting Electrocardiographic Results"-->
+<!--            android:textSize="18dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            tools:ignore="MissingConstraints" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/maximumHeartRateDchievedQuestion"-->
+<!--            android:layout_width="256dp"-->
+<!--            android:layout_height="31dp"-->
+<!--            android:text="Maximum Heart Rate Achieved"-->
+<!--            android:textSize="18dp"-->
+<!--            tools:ignore="MissingConstraints"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"/>-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/exerciseInducedAnginaQuestion"-->
+<!--            android:layout_width="199dp"-->
+<!--            android:layout_height="26dp"-->
+<!--            android:layout_marginStart="32dp"-->
+<!--            android:layout_marginTop="584dp"-->
+<!--            android:text="Exercise Induced Angina"-->
+<!--            android:textSize="18dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            tools:ignore="MissingConstraints" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/STDepressionInducedByExerciseRelativeToRestQuestion"-->
+<!--            android:layout_width="219dp"-->
+<!--            android:layout_height="54dp"-->
+<!--            android:layout_marginTop="144dp"-->
+<!--            android:text="ST Depression Induced by Exercise Relative to Rest"-->
+<!--            android:textSize="18dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            tools:ignore="MissingConstraints" />-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/chestPainTypeQuestion"-->
+<!--            android:layout_width="139dp"-->
+<!--            android:layout_height="28dp"-->
+<!--            android:layout_marginStart="32dp"-->
+<!--            android:layout_marginTop="468dp"-->
+<!--            android:text="Chest Pain Type"-->
+<!--            android:textSize="18dp"-->
+<!--            app:layout_constraintStart_toStartOf="parent"-->
+<!--            app:layout_constraintTop_toTopOf="parent"-->
+<!--            tools:ignore="MissingConstraints" />-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</FrameLayout>

@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">At Home Diagnostics</string>
+    <string name="record">Record</string>
+    <string name="play">Play</string>
+    <string name="stop">Stop</string>
+
+    <string-array name="RaceSpinner">
+        <item>AmericanIndianOrAlaskaNative</item>
+        <item>Asian</item>
+        <item>Black or African American</item>
+        <item>Native Hawaiian or Other Pacific Islander</item>
+        <item>White</item>
+
+    </string-array>
+
+    <string name="HispanicOrLatino">Hispanic or Latino</string>
+    <string name="NotHispanicOrLatino">Not Hispanic or Latino</string>
+
+</resources>

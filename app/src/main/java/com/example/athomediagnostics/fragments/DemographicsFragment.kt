@@ -17,12 +17,6 @@ import android.widget.Toast
 import android.widget.RadioButton
 import android.widget.RadioGroup
 
-
-
-
-
-
-
 class DemographicsFragment : Fragment(), AdapterView.OnItemSelectedListener {
 
     lateinit var radioGroup: RadioGroup
@@ -90,12 +84,6 @@ class DemographicsFragment : Fragment(), AdapterView.OnItemSelectedListener {
                 val radioData: String = radioButton.getText() as String
                 val spinnerData: String = spinner.selectedItem as String
                 val ageData = age.text.toString()
-
-
-                Log.i("radio", radioData)
-                Log.i("spinner", spinnerData)
-                Log.i("age", ageData)
-                Log.i("file", letDirectory.toString())
 
                 file.writeText(radioData)
                 file.appendText("\n")

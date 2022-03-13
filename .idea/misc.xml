@@ -6,6 +6,7 @@
         <entry key="../../../../layout/custom_preview.xml" value="0.1828125" />
         <entry key="app/src/main/res/drawable/ic_baseline_speaker_phone_24.xml" value="0.2675213675213675" />
         <entry key="app/src/main/res/drawable/ic_launcher_background.xml" value="0.2675213675213675" />
+        <entry key="app/src/main/res/drawable/listview_border.xml" value="0.2641350210970464" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.25427350427350426" />
         <entry key="app/src/main/res/layout/fragment_assessment.xml" value="0.25427350427350426" />
         <entry key="app/src/main/res/layout/fragment_audio.xml" value="0.25" />

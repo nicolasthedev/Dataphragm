@@ -3,6 +3,7 @@ package com.example.athomediagnostics.fragments.adapters
 import android.content.Context
 import android.media.AudioAttributes
 import android.media.MediaPlayer
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -48,7 +49,8 @@ class AudioListAdapter(val requireContext: Context, val audioList: ArrayList<Aud
         }
     }
     override fun getItemCount() = audioList.size
-    private fun playAudio(audioUrl: String) {
+    private fun playAudio(audioPath: String) {
+        Log.i("playaudio", audioPath)
 
         mp = MediaPlayer()
         mp.setAudioAttributes(
@@ -59,14 +61,12 @@ class AudioListAdapter(val requireContext: Context, val audioList: ArrayList<Aud
 
         try {
             // below line is use to set our url to our media player.
-            mp.setDataSource(audioUrl)
+            mp.setDataSource(audioPath)
             // below line is use to prepare
             // and start our media player.
-            mp.prepareAsync()
-            mp.setOnPreparedListener(MediaPlayer.OnPreparedListener { mp ->
-                // This line is used to play the music
-                mp.start()
-            })
+            mp.prepare()
+            mp.start()
+
         } catch (e: Exception) {
             e.printStackTrace()
         }

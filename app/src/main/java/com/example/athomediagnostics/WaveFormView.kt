@@ -45,8 +45,6 @@ class WaveFormView(context: Context?, attrs: AttributeSet?) : View(context, attr
             spikes.add(RectF(left, top, right, bottom))
         }
 
-
-
         invalidate()
 
     }

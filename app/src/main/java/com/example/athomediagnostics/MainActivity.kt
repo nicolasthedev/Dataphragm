@@ -13,6 +13,7 @@ import android.app.Activity
 import android.content.pm.PackageManager
 import android.media.MediaPlayer
 import android.media.MediaRecorder
+import android.os.AsyncTask
 //import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_audio.*
 
@@ -29,6 +30,12 @@ import com.example.athomediagnostics.fragments.AssessmentFragment
 import com.example.athomediagnostics.fragments.AudioFragment
 import com.example.athomediagnostics.fragments.DemographicsFragment
 import com.example.athomediagnostics.fragments.adapters.ViewPagerAdapter
+
+//
+import com.jcraft.jsch.ChannelExec
+import com.jcraft.jsch.JSch
+import java.io.ByteArrayOutputStream
+import java.util.*
 
 open class MainActivity : AppCompatActivity() {
 
@@ -57,3 +64,4 @@ open class MainActivity : AppCompatActivity() {
 
     }
 }
+

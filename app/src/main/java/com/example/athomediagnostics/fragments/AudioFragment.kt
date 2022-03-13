@@ -60,7 +60,7 @@ class AudioFragment: Fragment(), Timer.OnTimerTickListener {
         // Test code for list audio
         rv = view.findViewById(R.id.rv)
         rv.layoutManager = LinearLayoutManager(context)
-        audioListLayout()
+        //audioListLayout()
 
         // end of test code
 
@@ -73,8 +73,9 @@ class AudioFragment: Fragment(), Timer.OnTimerTickListener {
     @RequiresApi(Build.VERSION_CODES.O)
     @SuppressLint("WrongConstant")
     fun audioButtons(view: View){
-        val path: String = context?.getExternalFilesDir("").toString() + "/myRecording.3gp"
-        Log.i("findPathOfStorage", path)
+        val path: String = context?.getExternalFilesDir("").toString() + "/myRecording"
+        var audioCounter: Int = 0
+
 
         val btnAudioRecordOn = view.findViewById<ImageView>(R.id.btnAudioRecordOn)
         val btnAudioRecordOff = view.findViewById<ImageView>(R.id.btnAudioRecordOff)
@@ -95,7 +96,9 @@ class AudioFragment: Fragment(), Timer.OnTimerTickListener {
             mr.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP)
             // AMR: Adaptive Multi-Rate: Many modern mobile telephone handsets can store short audio recordings in the AMR format.
             mr.setAudioEncoder(MediaRecorder.OutputFormat.AMR_NB)
-            mr.setOutputFile(path)
+            mr.setOutputFile(path + "_" + audioCounter + ".3gp")
+            Log.i("findPathOfStorage", path + "_" + audioCounter + ".3gp")
+            audioCounter += 1
             mr.prepare()
             mr.start()
             btnAudioRecordOff.isEnabled = true
@@ -116,10 +119,14 @@ class AudioFragment: Fragment(), Timer.OnTimerTickListener {
             timer.stop()
             amplitudes = waveFormView.clear()
 
+            audioListLayout(path + "_" + audioCounter + ".3gp")
+
+
+
         }
 
         btnPlayRecording.setOnClickListener{
-            mp.setDataSource(path)
+            mp.setDataSource(path + "_" + (audioCounter - 1) + ".3gp")
             mp.prepare()
             mp.start()
             btnStopRecording.isEnabled = true
@@ -151,22 +158,20 @@ class AudioFragment: Fragment(), Timer.OnTimerTickListener {
 
     }
 
-    fun audioListLayout(){
+    fun audioListLayout(path: String){
 
-        // Test code for list audio
+        //val audioFiles: Array<out File>? = context?.getExternalFilesDirs("")
+        //audioFileList.clear()
+//        for (audioFile in audioFiles!!){
+//            audioFileList.add(AudioModel(audioFile.absolutePath))
+//            Log.i("stuffs", audioFile.absolutePath)
+//        }
 
-        val audioFiles: Array<out File>? = context?.getExternalFilesDirs("")
-        audioFileList.clear()
-
-        for (audioFile in audioFiles!!){
-            audioFileList.add(AudioModel(audioFile.toString()))
-            Log.i("stuffs", audioFile.path)
-        }
+        audioFileList.add(AudioModel(path))
 
         adapter = AudioListAdapter(requireContext(), audioFileList)
         rv.adapter = adapter
 
-        // end of test code
 
     }
 
